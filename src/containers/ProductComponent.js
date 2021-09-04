@@ -7,7 +7,7 @@ function ProductComponent() {
   const renderList = products.map((product) => {
     const { id, title, image, price, category } = product;
     return (
-      <div className="four wide column">
+      <div className="four wide column" key={id}>
         <Link to={`/product/${id}`}>
           <div className="ui link cards">
             <div className="card">
@@ -25,7 +25,7 @@ function ProductComponent() {
       </div>
     );
   });
-  return renderList;
+  return <>{renderList}</>;
 }
 
 export default ProductComponent;
